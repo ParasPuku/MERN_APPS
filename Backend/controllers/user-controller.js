@@ -22,7 +22,12 @@ const signup = async (req, res, next) => {
     existingUser = await User.findOne({ email });
     if (!existingUser) {
       const hashedPassword = bcrypt.hashSync(password);
-      const user = new User({ name, email, password: hashedPassword });
+      const user = new User({
+        name,
+        email,
+        password: hashedPassword,
+        blogs: [],
+      });
       await user.save();
       return res.status(201).json({ user });
     }
@@ -52,5 +57,9 @@ const login = async (req, res, next) => {
 
   return res.status(200).json({ message: "Login Successfully" });
 };
+
+const logout = async (req, res, next) => {};
+
+const profile = async (req, res, next) => {};
 
 module.exports = { getAllUsers, signup, login };
