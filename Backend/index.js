@@ -20,7 +20,4 @@ mongoose.connect("mongodb+srv://paraspuru143:RIpWKDfzfnqOuq0n@parascluster.q5heb
     console.log(`Error in DB while connecting`);
 })
 
-app.use("/", (req, res, next) => {
-    res.send("Hello World");
-})
 

@@ -56,9 +56,10 @@ const updateBlogPost = async (req, res, next) => {
 
 const deleteBlogPost = async (req, res, next) => {
   const { id } = req.params;
+  console.log("deleteBlogPost", id, req.params);
   let blog;
   try {
-    blob = await Blog.findById({ id });
+    blog = await Blog.findByIdAndDelete(id);
   } catch (error) {
     console.log("Error", error);
   }
