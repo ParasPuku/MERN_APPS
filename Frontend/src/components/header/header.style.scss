@@ -1,0 +1,32 @@
+.header-container {
+    background: #23bf86;
+    padding: 16px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left-section {
+      .logo {
+        width: 110px;
+        height: auto;
+      }
+    }
+    .right-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .header-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style-type: none;
+        .header-link {
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 600;
+          font-family: system-ui;
+        }
+      }
+    }
+  }
+}
