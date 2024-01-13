@@ -15,12 +15,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 100px;
       .header-links {
         display: flex;
         align-items: center;
         gap: 20px;
         list-style-type: none;
         .header-link {
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 600;
+          font-family: system-ui;
+        }
+      }
+      .auth-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style-type: none;
+        .auth-link {
           color: #ffffff;
           font-size: 16px;
           font-weight: 600;

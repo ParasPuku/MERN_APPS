@@ -15,6 +15,11 @@ const header = () => {
                     <li className='header-link'>My Blogs</li>
                     <li className='header-link'>Add Blog</li>
                 </ul>
+                <ul className='auth-links'>
+                    <li className='auth-link'>Register</li>
+                    <li className='auth-link'>Login</li>
+                    <li className='auth-link'>Logout</li>
+                </ul>
             </div>
         </div>
     </div>
