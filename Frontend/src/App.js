@@ -7,6 +7,8 @@ import BlogDetail from "./components/BlogDetail";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Logout from "./components/Logout";
+import Register from "./components/Register";
 
 function App() {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
@@ -19,6 +21,8 @@ function App() {
       <main className="main-section">
         <Routes>
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/logout" element={<Logout />} />
+          <Route exact path="/register" element={<Register />} />
           <Route exact path="/blogs" element={<Blogs />} />
           <Route exact path="/blogs/add" element={<AddBlog />} />
           <Route exact path="/my-blogs" element={<UserBlogs />} />

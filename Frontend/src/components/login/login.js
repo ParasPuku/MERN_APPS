@@ -1,16 +1,14 @@
 import React from 'react'
 import './Login.style.scss'
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className='login-container'>
       <form>
         <div className='login-section'>
             <h2>WELCOME</h2>
             <div className='login-screen'>
-              <div className='fields'>
-                <label className='username'>Name </label>
-                <input className='field name' type='text' placeholder='Name'/>
-              </div>
               <div className='fields'>
                 <label className="email">Email </label>
                 <input className="field email" type='text' placeholder='Email' />
@@ -21,9 +19,9 @@ const Login = () => {
               </div>
             </div>
             <div className='login-action'>
-              <button className='login-now'>Login Now</button>
+              <button type='submit' className='login-now'>Login Now</button>
               <div className='divider'>OR</div>
-              <button className='register'>Register Now</button>
+              <button className='register' onClick={() => navigate('/register')}>Register Now</button>
             </div>
         </div>
       </form>

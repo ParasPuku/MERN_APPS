@@ -1,0 +1,64 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    padding: 16px;
+    box-shadow: 0px 0px 12px 6px #23bf86;
+    border-radius: 16px;
+    margin-top: 50px;
+    .register-section {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .register-screen {
+      margin-top: 20px;
+      .fields {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px 0;
+        label {
+          padding-bottom: 2px;
+        }
+        .field {
+          width: 100%;
+          padding: 10px;
+          border-radius: 10px;
+          border: 1px solid #036b03;
+          &:focus {
+              outline: 0;
+          }
+        }
+      }
+    }
+    .register-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0 10px;
+      .register-now {
+        background: #23bf86;
+        border: 2px solid #036b03;
+        color: #ffffff;
+        padding: 10px 25px;
+        width: 60%;
+          border-radius: 20px;
+      }
+      .login {
+        background: #23bf86;
+        border: 2px solid #036b03;
+        color: #ffffff;
+        padding: 10px 25px;
+        width: 40%;
+        border-radius: 20px;
+      }
+    }
+  }
+  

@@ -49,7 +49,7 @@ const Header = () => {
           <ul className="auth-links">
             {!isLoggedIn && (
               <>
-                <li className="auth-link" onClick={() => navigate("/login")}>
+                <li className="auth-link" onClick={() => navigate("/register")}>
                   Register
                 </li>
                 <li className="auth-link" onClick={() => navigate("/login")}>
@@ -58,7 +58,7 @@ const Header = () => {
               </>
             )}
             {isLoggedIn && (
-              <li className="auth-link" onClick={() => navigate("/login")}>
+              <li className="auth-link" onClick={() => navigate("/logout")}>
                 Logout
               </li>
             )}
