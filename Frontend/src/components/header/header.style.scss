@@ -25,7 +25,12 @@
           color: #ffffff;
           font-size: 16px;
           font-weight: 600;
-          font-family: system-ui;
+          cursor: pointer;
+          &.active {
+            border-bottom: 2px solid #fc0303;
+            background: #ff030370;
+            padding: 5px;
+          }
         }
       }
       .auth-links {
@@ -37,7 +42,7 @@
           color: #ffffff;
           font-size: 16px;
           font-weight: 600;
-          font-family: system-ui;
+          cursor: pointer;
         }
       }
     }

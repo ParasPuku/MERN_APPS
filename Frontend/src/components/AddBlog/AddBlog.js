@@ -2,7 +2,11 @@ import React from 'react'
 import './AddBlog.style.scss';
 const AddBlog = () => {
   return (
-    <div>Add Blog</div>
+    <div className='add-blog-container'>
+      <div>
+        
+      </div>
+    </div>
   )
 }
 
