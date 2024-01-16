@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import "./Header.style.scss";
 import logo from "../../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutAuthAction } from "../../store/reducers/authReducer";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleLinkClick = (value) => {
     setActiveLink(value);
     navigate(value);
+  };
+  const handleLogout = () => {
+    dispatch(logoutAuthAction());
+    navigate("/login");
   };
   return (
     <div className="header-container">
@@ -58,7 +64,7 @@ const Header = () => {
               </>
             )}
             {isLoggedIn && (
-              <li className="auth-link" onClick={() => navigate("/logout")}>
+              <li className="auth-link" onClick={handleLogout}>
                 Logout
               </li>
             )}

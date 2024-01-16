@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Register.style.scss";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { loginAuthAction } from "../../store/reducers/authReducer";
 const Register = () => {
   const [inputValue, setInputValue] = useState({
     name: "",
@@ -8,6 +11,22 @@ const Register = () => {
     password: "",
   });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const sendRegisterRequest = async () => {
+    const URL = `http://localhost:5001/v1/api/user/signup`;
+    const payload = {
+      name: inputValue.name,
+      email: inputValue.email,
+      password: inputValue.password,
+    };
+    try {
+      const response = await axios.post(URL, payload);
+      const data = await response.data;
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleInputChange = (e) => {
     setInputValue((prevState) => ({
       ...prevState,
@@ -16,7 +35,10 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("INPUT VALUE", inputValue);
+    const response = sendRegisterRequest()
+      .then(() => dispatch(loginAuthAction()))
+      .then((data) => console.log(data));
+    console.log("INPUT VALUE", response);
   };
   return (
     <div className="register-container">
@@ -56,9 +78,13 @@ const Register = () => {
             </div>
           </div>
           <div className="register-action">
-            <button type="submit" className="register-now">Register Now</button>
+            <button type="submit" className="register-now">
+              Register Now
+            </button>
             <div className="divider">OR</div>
-            <button className="login" onClick={() => navigate('/login')}>Login Now</button>
+            <button className="login" onClick={() => navigate("/login")}>
+              Login Now
+            </button>
           </div>
         </div>
       </form>
