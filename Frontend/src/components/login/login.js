@@ -20,6 +20,7 @@ const Login = () => {
     try {
       const response = await axios.post(url, payload);
       const data = await response.data;
+      localStorage.setItem("userId", data.user._id);
       return data;
     } catch (error) {
       console.log(error);

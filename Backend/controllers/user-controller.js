@@ -29,7 +29,7 @@ const signup = async (req, res, next) => {
         blogs: [],
       });
       await user.save();
-      return res.status(201).json({ user });
+      return res.status(201).json({message: 'Signup successfully!', user });
     }
   } catch (error) {
     console.log("Error", error);
@@ -54,11 +54,18 @@ const login = async (req, res, next) => {
   if (!isPasswordCorrect) {
     return res.status(400).json({ message: "Incorrect Password" });
   }
-
-  return res.status(200).json({ message: "Login Successfully" });
+  return res.status(200).json({ message: "Login Successfully!", user: existingUser });
 };
 
-const logout = async (req, res, next) => {};
+const logout = async (req, res, next) => {
+  try {
+    req.user.tokens.splice(0, 1);
+    await req.user.save();
+    return res.status(200).json({ message: "Logout Successfully!" });
+  } catch (error) {
+    console.log("Error", error);
+  }
+};
 
 const profile = async (req, res, next) => {};
 

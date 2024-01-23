@@ -22,6 +22,7 @@ const Register = () => {
     try {
       const response = await axios.post(URL, payload);
       const data = await response.data;
+      localStorage.setItem("userId", data.user._id);
       return data;
     } catch (err) {
       console.log(err);

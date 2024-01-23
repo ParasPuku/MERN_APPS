@@ -5,7 +5,7 @@ const User = require("../models/user");
 const getAllBlogPosts = async (req, res, next) => {
   let blogs;
   try {
-    blogs = await Blog.find();
+    blogs = await Blog.find().populate('user');
   } catch (error) {
     console.log("Error", error);
   }

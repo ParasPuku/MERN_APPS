@@ -17,7 +17,7 @@ const Header = () => {
   };
   const handleLogout = () => {
     dispatch(logoutAuthAction());
-    navigate("/login");
+    navigate("/logout");
   };
   return (
     <div className="header-container">

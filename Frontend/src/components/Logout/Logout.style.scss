@@ -1,1 +1,54 @@
-
+.logout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  left: 50%;
+  top: 35%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  .done-gif {
+    .left-bar-line {
+      width: 30%;
+      color: #de0d0d;
+      position: absolute;
+      border-bottom: 2px solid #121212;
+      left: 0;
+      top: 18%;
+    }
+    .right-bar-line {
+        width: 30%;
+    color: #de0d0d;
+    position: absolute;
+    border-bottom: 2px solid #121212;
+    right: 0;
+    top: 18%;
+    }
+  }
+  .message-section {
+    .thank-you {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #4b4b4b;
+    }
+    .logout-msg {
+      font-size: 24px;
+      font-weight: 600;
+      color: #141414;
+    }
+  }
+  .gif {
+    width: 80px;
+    height: 80px;
+    z-index: 9999;
+    position: relative;
+  }
+  .login-again {
+    .click-here {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
